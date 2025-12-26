@@ -39,6 +39,22 @@
     .subtitle { font-size: 16px; opacity: 0.8; margin: 0 0 18px; }
     .contact { font-size: 14px; opacity: 0.85; }
     .contact a { color: inherit; }
+
+    /* Botão flutuante do áudio */
+    #audioToggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.15);
+      background: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 44px;
+      padding: 0;
+    }
   </style>
 </head>
 
@@ -58,5 +74,59 @@
       </div>
     </div>
   </main>
+
+  <!-- Áudio de fundo (autoplay mutado) -->
+  <audio id="bgAudio" autoplay muted loop preload="metadata">
+    <source src="assets/audio/Quarteto_IZ.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <!-- Botão único: mute/unmute (e “play” se o navegador bloquear autoplay) -->
+  <button id="audioToggle" type="button" aria-label="Ativar áudio" title="Ativar áudio">🔇</button>
+
+  <script>
+    (function () {
+      const audio = document.getElementById("bgAudio");
+      const btn = document.getElementById("audioToggle");
+
+      function setIcon() {
+        const audible = !audio.muted && audio.volume > 0 && !audio.paused;
+        btn.textContent = audible ? "🔊" : "🔇";
+        btn.title = audible ? "Silenciar" : "Ativar áudio";
+        btn.setAttribute("aria-label", btn.title);
+      }
+
+      // Tenta tocar (mutado) automaticamente. Se o browser bloquear, fica em silêncio até clique.
+      window.addEventListener("load", async () => {
+        try {
+          audio.muted = true;
+          await audio.play();
+        } catch (e) {
+          // Autoplay bloqueado: ok.
+        }
+        setIcon();
+      });
+
+      btn.addEventListener("click", async () => {
+        try {
+          if (audio.paused) {
+            await audio.play();
+            audio.muted = false;
+            audio.volume = 1.0;
+          } else {
+            audio.muted = !audio.muted;
+            if (!audio.muted && audio.volume === 0) audio.volume = 1.0;
+          }
+        } catch (e) {
+          // Se falhar, mantém estado coerente
+        }
+        setIcon();
+      });
+
+      audio.addEventListener("play", setIcon);
+      audio.addEventListener("pause", setIcon);
+      audio.addEventListener("volumechange", setIcon);
+    })();
+  </script>
 </body>
 </html>
