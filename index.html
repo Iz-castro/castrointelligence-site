@@ -119,10 +119,10 @@
       box-shadow: 0 10px 30px rgba(99,102,241,0.3);
     }
 
-    /* Serviços */
+/* Serviços */
     .servicos {
       padding: 100px 24px;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
     }
     .secao-titulo {
@@ -140,38 +140,53 @@
     }
     .servicos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 28px;
     }
     .servico-card {
       background: var(--cor-fundo);
-      border: 1px solid rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
       border-radius: 16px;
-      padding: 32px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .servico-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.1);
     }
-    .servico-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--cor-fundo-alt);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin-bottom: 20px;
+    .servico-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #0a0a1a;
     }
-    .servico-card h3 {
+    .servico-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .servico-card:hover .servico-img img {
+      transform: scale(1.05);
+    }
+    .servico-content {
+      padding: 24px 28px 28px;
+    }
+    .servico-content h3 {
       font-size: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      color: var(--cor-texto);
     }
-    .servico-card p {
+    .servico-content p {
       color: var(--cor-texto-claro);
       font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Diferenciais */
@@ -309,7 +324,7 @@
       </div>
     </section>
 
-    <!-- Serviços -->
+<!-- Serviços -->
     <section id="servicos" class="servicos">
       <div class="secao-titulo">
         <h2>Nossos Serviços</h2>
@@ -317,34 +332,58 @@
       </div>
       <div class="servicos-grid">
         <div class="servico-card">
-          <div class="servico-icon">🤖</div>
-          <h3>Implementação de IA</h3>
-          <p>Consultoria completa para integrar inteligência artificial nos processos do seu negócio, desde o diagnóstico até a produção.</p>
+          <div class="servico-img">
+            <img src="assets/IA-fig.png" alt="Implementação de IA" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>Implementação de IA</h3>
+            <p>Consultoria completa para integrar inteligência artificial nos processos do seu negócio, desde o diagnóstico até a produção.</p>
+          </div>
         </div>
         <div class="servico-card">
-          <div class="servico-icon">📊</div>
-          <h3>Data Science</h3>
-          <p>Análise exploratória, modelagem estatística e insights acionáveis para tomada de decisão baseada em dados.</p>
+          <div class="servico-img">
+            <img src="assets/data-fig.png" alt="Data Science" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>Data Science</h3>
+            <p>Análise exploratória, modelagem estatística e insights acionáveis para tomada de decisão baseada em dados.</p>
+          </div>
         </div>
         <div class="servico-card">
-          <div class="servico-icon">🧠</div>
-          <h3>Machine Learning</h3>
-          <p>Desenvolvimento de modelos preditivos customizados: classificação, regressão, clustering e séries temporais.</p>
+          <div class="servico-img">
+            <img src="assets/ML-fig.png" alt="Machine Learning" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>Machine Learning</h3>
+            <p>Desenvolvimento de modelos preditivos customizados: classificação, regressão, clustering e séries temporais.</p>
+          </div>
         </div>
         <div class="servico-card">
-          <div class="servico-icon">⚙️</div>
-          <h3>MLOps & Deploy</h3>
-          <p>Colocamos seus modelos em produção com pipelines automatizados, monitoramento e escalabilidade.</p>
+          <div class="servico-img">
+            <img src="assets/MLOps-fig.png" alt="MLOps e Deploy" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>MLOps & Deploy</h3>
+            <p>Colocamos seus modelos em produção com pipelines automatizados, monitoramento e escalabilidade.</p>
+          </div>
         </div>
         <div class="servico-card">
-          <div class="servico-icon">💻</div>
-          <h3>Desenvolvimento de Software</h3>
-          <p>Aplicações customizadas, APIs, dashboards e ferramentas internas com Python e tecnologias modernas.</p>
+          <div class="servico-img">
+            <img src="assets/dev-fig.png" alt="Desenvolvimento de Software" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>Desenvolvimento de Software</h3>
+            <p>Aplicações customizadas, APIs, dashboards e ferramentas internas com Python e tecnologias modernas.</p>
+          </div>
         </div>
         <div class="servico-card">
-          <div class="servico-icon">🎓</div>
-          <h3>Treinamento & Capacitação</h3>
-          <p>Workshops e mentorias para capacitar sua equipe em Data Science, Python e ferramentas de IA.</p>
+          <div class="servico-img">
+            <img src="assets/train-fig.png" alt="Treinamento e Capacitação" loading="lazy" />
+          </div>
+          <div class="servico-content">
+            <h3>Treinamento & Capacitação</h3>
+            <p>Workshops e mentorias para capacitar sua equipe em Data Science, Python e ferramentas de IA.</p>
+          </div>
         </div>
       </div>
     </section>
