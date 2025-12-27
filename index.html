@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Castro Intelligence — Site em construção</title>
-  <meta name="description" content="Castro Intelligence — Data Science & ML. Site em construção." />
+  <title>Castro Intelligence — Data Science & Machine Learning</title>
+  <meta name="description" content="Castro Intelligence — Consultoria em Data Science, Machine Learning e Inteligência Artificial. Transformamos dados em decisões." />
 
   <!-- Google Tag Manager -->
   <script>
@@ -17,43 +17,265 @@
   <!-- End Google Tag Manager -->
 
   <style>
-    html, body { height: 100%; margin: 0; }
-    body { font-family: Arial, sans-serif; background: #fff; color: #111; }
+    :root {
+      --cor-primaria: #6366f1;
+      --cor-secundaria: #8b5cf6;
+      --cor-texto: #1f2937;
+      --cor-texto-claro: #6b7280;
+      --cor-fundo: #ffffff;
+      --cor-fundo-alt: #f9fafb;
+      --gradiente: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    }
 
-    .wrap {
-      min-height: 100%;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { height: 40px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--cor-texto);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cor-primaria); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: var(--cor-fundo-alt);
+    }
+    .hero-content { max-width: 800px; }
+    .hero-logo {
+      width: min(400px, 80vw);
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--gradiente);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--cor-texto);
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--cor-texto-claro);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gradiente);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(99,102,241,0.3);
+    }
+
+    /* Serviços */
+    .servicos {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .secao-titulo {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .secao-titulo h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .secao-titulo p {
+      color: var(--cor-texto-claro);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .servicos-grid {
       display: grid;
-      place-items: center;
-      padding: 32px 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .servico-card {
+      background: var(--cor-fundo);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .servico-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .servico-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--cor-fundo-alt);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .servico-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .servico-card p {
+      color: var(--cor-texto-claro);
+      font-size: 15px;
+    }
+
+    /* Diferenciais */
+    .diferenciais {
+      background: var(--cor-fundo-alt);
+      padding: 100px 24px;
+    }
+    .diferenciais-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .diff-item { text-align: center; }
+    .diff-numero {
+      font-size: 48px;
+      font-weight: 700;
+      background: var(--gradiente);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .diff-item h4 {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+    .diff-item p {
+      color: var(--cor-texto-claro);
+      font-size: 14px;
+    }
+
+    /* Contato */
+    .contato {
+      padding: 100px 24px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contato h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .contato p {
+      color: var(--cor-texto-claro);
+      margin-bottom: 32px;
+    }
+    .contato-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .contato-info a {
+      color: var(--cor-primaria);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contato-info a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      background: var(--cor-texto);
+      color: white;
+      padding: 40px 24px;
       text-align: center;
     }
-
-    .logo {
-      width: min(560px, 90vw);
-      height: auto;
-      display: block;
-      margin: 0 auto 18px;
+    footer p {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+    .footer-cnpj {
+      font-size: 12px;
+      opacity: 0.5;
+      margin-top: 8px;
     }
 
-    .title { font-size: 22px; font-weight: 700; margin: 6px 0 6px; }
-    .subtitle { font-size: 16px; opacity: 0.8; margin: 0 0 18px; }
-    .contact { font-size: 14px; opacity: 0.85; }
-    .contact a { color: inherit; }
-
-    /* Botão flutuante do áudio */
+    /* Botão áudio */
     #audioToggle {
       position: fixed;
       right: 16px;
       bottom: 16px;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.15);
-      background: #fff;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: var(--cor-texto);
+      color: white;
       cursor: pointer;
-      font-size: 18px;
-      line-height: 44px;
-      padding: 0;
+      font-size: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      z-index: 100;
+    }
+    #audioToggle:hover { transform: scale(1.1); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .servicos, .diferenciais, .contato { padding: 60px 20px; }
     }
   </style>
 </head>
@@ -64,24 +286,122 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <main class="wrap">
-    <div>
-      <img class="logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
-      <div class="title">Site em construção</div>
-      <div class="subtitle">Estamos preparando algo sólido (sem firula).</div>
-      <div class="contact">
-        Contato: <a href="mailto:castrointelligence@gmail.com">castrointelligence@gmail.com</a>
+  <header>
+    <nav>
+      <img class="nav-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <img class="hero-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
+        <span class="badge">🚧 Site em Construção</span>
+        <h1>Dados que geram decisões.<br>Inteligência que gera resultados.</h1>
+        <p>Consultoria especializada em Data Science, Machine Learning e Inteligência Artificial. Transformamos seus dados em vantagem competitiva.</p>
+        <a href="#contato" class="cta-btn">Fale Conosco</a>
       </div>
-    </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="servicos">
+      <div class="secao-titulo">
+        <h2>Nossos Serviços</h2>
+        <p>Soluções sob medida para extrair o máximo valor dos seus dados</p>
+      </div>
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="servico-icon">🤖</div>
+          <h3>Implementação de IA</h3>
+          <p>Consultoria completa para integrar inteligência artificial nos processos do seu negócio, desde o diagnóstico até a produção.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">📊</div>
+          <h3>Data Science</h3>
+          <p>Análise exploratória, modelagem estatística e insights acionáveis para tomada de decisão baseada em dados.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🧠</div>
+          <h3>Machine Learning</h3>
+          <p>Desenvolvimento de modelos preditivos customizados: classificação, regressão, clustering e séries temporais.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">⚙️</div>
+          <h3>MLOps & Deploy</h3>
+          <p>Colocamos seus modelos em produção com pipelines automatizados, monitoramento e escalabilidade.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">💻</div>
+          <h3>Desenvolvimento de Software</h3>
+          <p>Aplicações customizadas, APIs, dashboards e ferramentas internas com Python e tecnologias modernas.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🎓</div>
+          <h3>Treinamento & Capacitação</h3>
+          <p>Workshops e mentorias para capacitar sua equipe em Data Science, Python e ferramentas de IA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="diferenciais">
+      <div class="diferenciais-content">
+        <div class="secao-titulo">
+          <h2>Por que a Castro Intelligence?</h2>
+          <p>Compromisso com resultados, sem firula</p>
+        </div>
+        <div class="diff-grid">
+          <div class="diff-item">
+            <div class="diff-numero">100%</div>
+            <h4>Foco em Resultado</h4>
+            <p>Projetos orientados a ROI mensurável</p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-numero">E2E</div>
+            <h4>End-to-End</h4>
+            <p>Do problema de negócio à solução em produção</p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-numero">🇧🇷</div>
+            <h4>Atendimento Local</h4>
+            <p>Comunicação direta, sem burocracia</p>
+          </div>
+          <div class="diff-item">
+            <div class="diff-numero">+</div>
+            <h4>Parceria Contínua</h4>
+            <p>Suporte e evolução após a entrega</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+      <h2>Vamos Conversar?</h2>
+      <p>Conte sobre seu desafio. Respondemos em até 24 horas úteis.</p>
+      <div class="contato-info">
+        <a href="mailto:castrointelligence@gmail.com">📧 castrointelligence@gmail.com</a>
+        <a href="https://wa.me/5531982777779" target="_blank" rel="noopener">📱 (31) 98277-7779</a>
+      </div>
+    </section>
   </main>
 
-  <!-- Áudio de fundo (autoplay mutado) -->
+  <footer>
+    <p>© 2025 Castro Intelligence Data & ML Ltda. Todos os direitos reservados.</p>
+    <p class="footer-cnpj">CNPJ: 63.609.610/0001-07 | Belo Horizonte, MG</p>
+  </footer>
+
+  <!-- Áudio de fundo -->
   <audio id="bgAudio" autoplay muted loop preload="metadata">
     <source src="assets/audio/Quarteto_IZ.mp3" type="audio/mpeg" />
-    Seu navegador não suporta áudio HTML5.
   </audio>
 
-  <!-- Botão único: mute/unmute (e “play” se o navegador bloquear autoplay) -->
   <button id="audioToggle" type="button" aria-label="Ativar áudio" title="Ativar áudio">🔇</button>
 
   <script>
@@ -96,14 +416,11 @@
         btn.setAttribute("aria-label", btn.title);
       }
 
-      // Tenta tocar (mutado) automaticamente. Se o browser bloquear, fica em silêncio até clique.
       window.addEventListener("load", async () => {
         try {
           audio.muted = true;
           await audio.play();
-        } catch (e) {
-          // Autoplay bloqueado: ok.
-        }
+        } catch (e) {}
         setIcon();
       });
 
@@ -117,9 +434,7 @@
             audio.muted = !audio.muted;
             if (!audio.muted && audio.volume === 0) audio.volume = 1.0;
           }
-        } catch (e) {
-          // Se falhar, mantém estado coerente
-        }
+        } catch (e) {}
         setIcon();
       });
 
