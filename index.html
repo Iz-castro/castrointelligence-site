@@ -119,7 +119,7 @@
       box-shadow: 0 10px 30px rgba(99,102,241,0.3);
     }
 
-/* Serviços */
+    /* Serviços */
     .servicos {
       padding: 100px 24px;
       max-width: 1400px;
@@ -181,12 +181,6 @@
       color: var(--cor-texto-claro);
       font-size: 15px;
       line-height: 1.6;
-    }
-
-    @media (max-width: 480px) {
-      .servicos-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     /* Diferenciais */
@@ -292,6 +286,9 @@
       .hero { padding: 100px 20px 60px; }
       .servicos, .diferenciais, .contato { padding: 60px 20px; }
     }
+    @media (max-width: 480px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
@@ -305,33 +302,33 @@
     <nav>
       <img class="nav-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
       <ul class="nav-links">
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#servicos" data-gtm="nav-servicos">Serviços</a></li>
+        <li><a href="#diferenciais" data-gtm="nav-diferenciais">Diferenciais</a></li>
+        <li><a href="#contato" data-gtm="nav-contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" data-gtm-section="hero">
       <div class="hero-content">
         <img class="hero-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
         <span class="badge">🚧 Site em Construção</span>
         <h1>Dados que geram decisões.<br>Inteligência que gera resultados.</h1>
         <p>Consultoria especializada em Data Science, Machine Learning e Inteligência Artificial. Transformamos seus dados em vantagem competitiva.</p>
-        <a href="#contato" class="cta-btn">Fale Conosco</a>
+        <a href="#contato" class="cta-btn" data-gtm="cta-contato">Fale Conosco</a>
       </div>
     </section>
 
-<!-- Serviços -->
-    <section id="servicos" class="servicos">
+    <!-- Serviços -->
+    <section id="servicos" class="servicos" data-gtm-section="servicos">
       <div class="secao-titulo">
         <h2>Nossos Serviços</h2>
         <p>Soluções sob medida para extrair o máximo valor dos seus dados</p>
       </div>
       <div class="servicos-grid">
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="ia">
           <div class="servico-img">
             <img src="assets/IA-fig.png" alt="Implementação de IA" loading="lazy" />
           </div>
@@ -340,7 +337,7 @@
             <p>Consultoria completa para integrar inteligência artificial nos processos do seu negócio, desde o diagnóstico até a produção.</p>
           </div>
         </div>
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="data-science">
           <div class="servico-img">
             <img src="assets/data-fig.png" alt="Data Science" loading="lazy" />
           </div>
@@ -349,7 +346,7 @@
             <p>Análise exploratória, modelagem estatística e insights acionáveis para tomada de decisão baseada em dados.</p>
           </div>
         </div>
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="ml">
           <div class="servico-img">
             <img src="assets/ML-fig.png" alt="Machine Learning" loading="lazy" />
           </div>
@@ -358,7 +355,7 @@
             <p>Desenvolvimento de modelos preditivos customizados: classificação, regressão, clustering e séries temporais.</p>
           </div>
         </div>
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="mlops">
           <div class="servico-img">
             <img src="assets/MLOps-fig.png" alt="MLOps e Deploy" loading="lazy" />
           </div>
@@ -367,7 +364,7 @@
             <p>Colocamos seus modelos em produção com pipelines automatizados, monitoramento e escalabilidade.</p>
           </div>
         </div>
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="dev">
           <div class="servico-img">
             <img src="assets/dev-fig.png" alt="Desenvolvimento de Software" loading="lazy" />
           </div>
@@ -376,7 +373,7 @@
             <p>Aplicações customizadas, APIs, dashboards e ferramentas internas com Python e tecnologias modernas.</p>
           </div>
         </div>
-        <div class="servico-card">
+        <div class="servico-card" data-gtm-card="treinamento">
           <div class="servico-img">
             <img src="assets/train-fig.png" alt="Treinamento e Capacitação" loading="lazy" />
           </div>
@@ -389,7 +386,7 @@
     </section>
 
     <!-- Diferenciais -->
-    <section id="diferenciais" class="diferenciais">
+    <section id="diferenciais" class="diferenciais" data-gtm-section="diferenciais">
       <div class="diferenciais-content">
         <div class="secao-titulo">
           <h2>Por que a Castro Intelligence?</h2>
@@ -421,12 +418,12 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="contato">
+    <section id="contato" class="contato" data-gtm-section="contato">
       <h2>Vamos Conversar?</h2>
       <p>Conte sobre seu desafio. Respondemos em até 24 horas úteis.</p>
       <div class="contato-info">
-        <a href="mailto:castrointelligence@gmail.com">📧 castrointelligence@gmail.com</a>
-        <a href="https://wa.me/5531982777779" target="_blank" rel="noopener">📱 (31) 98277-7779</a>
+        <a href="mailto:castrointelligence@gmail.com" data-gtm="email-contato">📧 castrointelligence@gmail.com</a>
+        <a href="https://wa.me/5531982777779" target="_blank" rel="noopener" data-gtm="whatsapp-contato">📱 (31) 98277-7779</a>
       </div>
     </section>
   </main>
@@ -441,7 +438,7 @@
     <source src="assets/audio/Quarteto_IZ.mp3" type="audio/mpeg" />
   </audio>
 
-  <button id="audioToggle" type="button" aria-label="Ativar áudio" title="Ativar áudio">🔇</button>
+  <button id="audioToggle" type="button" aria-label="Ativar áudio" title="Ativar áudio" data-gtm="audio-toggle">🔇</button>
 
   <script>
     (function () {
