@@ -3,10 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Castro Intelligence — Data Science & Machine Learning</title>
-  <meta name="description" content="Castro Intelligence — Consultoria em Data Science, Machine Learning e Inteligência Artificial. Transformamos dados em decisões." />
-  <meta name="facebook-domain-verification" content="7t535azggjrtmeiy3erq0459cvg3gm" />
-  
+  <title>Castro Intelligence — Ciência, Tecnologia, Estratégia e Resultados</title>
+  <meta name="description" content="Castro Intelligence — consultoria em IA e engenharia de dados, agentes de WhatsApp (Castro Talk) e inbox com auditoria por IA (Castro Chat). Belo Horizonte, MG." />
+  <meta name="theme-color" content="#111216" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Castro Intelligence — Ciência, Tecnologia, Estratégia e Resultados" />
+  <meta property="og:description" content="IA aplicada a dados e a decisões. Consultoria em Machine Learning, engenharia de dados e agentes de IA para WhatsApp." />
+  <meta property="og:url" content="https://castrointelligence.com.br" />
+  <meta property="og:image" content="https://castrointelligence.com.br/assets/ci-logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="assets/ci-logo.png" />
+  <link rel="canonical" href="https://castrointelligence.com.br/" />
+
   <!-- Google Tag Manager -->
   <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,470 +27,350 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <style>
-    :root {
-      --cor-primaria: #6366f1;
-      --cor-secundaria: #8b5cf6;
-      --cor-texto: #1f2937;
-      --cor-texto-claro: #6b7280;
-      --cor-fundo: #ffffff;
-      --cor-fundo-alt: #f9fafb;
-      --gradiente: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--cor-fundo);
-      color: var(--cor-texto);
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo { height: 40px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--cor-texto);
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--cor-primaria); }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      background: var(--cor-fundo-alt);
-    }
-    .hero-content { max-width: 800px; }
-    .hero-logo {
-      width: min(400px, 80vw);
-      margin-bottom: 32px;
-    }
-    .badge {
-      display: inline-block;
-      background: var(--gradiente);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--cor-texto);
-    }
-    .hero p {
-      font-size: 18px;
-      color: var(--cor-texto-claro);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gradiente);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(99,102,241,0.3);
-    }
-
-    /* Serviços */
-    .servicos {
-      padding: 100px 24px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .secao-titulo {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .secao-titulo h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-    .secao-titulo p {
-      color: var(--cor-texto-claro);
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 28px;
-    }
-    .servico-card {
-      background: var(--cor-fundo);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .servico-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.1);
-    }
-    .servico-img {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      background: #0a0a1a;
-    }
-    .servico-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
-    }
-    .servico-card:hover .servico-img img {
-      transform: scale(1.05);
-    }
-    .servico-content {
-      padding: 24px 28px 28px;
-    }
-    .servico-content h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: var(--cor-texto);
-    }
-    .servico-content p {
-      color: var(--cor-texto-claro);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* Diferenciais */
-    .diferenciais {
-      background: var(--cor-fundo-alt);
-      padding: 100px 24px;
-    }
-    .diferenciais-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    .diff-item { text-align: center; }
-    .diff-numero {
-      font-size: 48px;
-      font-weight: 700;
-      background: var(--gradiente);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .diff-item h4 {
-      font-size: 18px;
-      margin: 8px 0;
-    }
-    .diff-item p {
-      color: var(--cor-texto-claro);
-      font-size: 14px;
-    }
-
-    /* Contato */
-    .contato {
-      padding: 100px 24px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contato h2 {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-    .contato p {
-      color: var(--cor-texto-claro);
-      margin-bottom: 32px;
-    }
-    .contato-info {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-    }
-    .contato-info a {
-      color: var(--cor-primaria);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contato-info a:hover { text-decoration: underline; }
-
-    /* Footer */
-    footer {
-      background: var(--cor-texto);
-      color: white;
-      padding: 40px 24px;
-      text-align: center;
-    }
-    footer p {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-    .footer-cnpj {
-      font-size: 12px;
-      opacity: 0.5;
-      margin-top: 8px;
-    }
-
-    /* Botão áudio */
-    #audioToggle {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: none;
-      background: var(--cor-texto);
-      color: white;
-      cursor: pointer;
-      font-size: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-      z-index: 100;
-    }
-    #audioToggle:hover { transform: scale(1.1); }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero { padding: 100px 20px 60px; }
-      .servicos, .diferenciais, .contato { padding: 60px 20px; }
-    }
-    @media (max-width: 480px) {
-      .servicos-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/ci.css" />
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CB9PXD5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    <nav>
-      <img class="nav-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
-      <ul class="nav-links">
-        <li><a href="#servicos" data-gtm="nav-servicos">Serviços</a></li>
-        <li><a href="#diferenciais" data-gtm="nav-diferenciais">Diferenciais</a></li>
-        <li><a href="/portfolio/" target="_blank" rel="noopener" data-gtm="nav-portfolio">Portfólio Musical</a></li>
-        <li><a href="#contato" data-gtm="nav-contato">Contato</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Castro Intelligence — início">
+        <img src="assets/ci-logo.png" alt="Castro Intelligence" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#solucoes">Soluções</a>
+        <a href="castro-talk.html">Castro Talk</a>
+        <a href="castro-chat.html">Castro Chat</a>
+        <a href="consultoria.html">Consultoria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#contato" data-gtm="cta-contato">Falar com a Castro</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" data-gtm-section="hero">
-      <div class="hero-content">
-        <img class="hero-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
-        <span class="badge">🚧 Site em Construção</span>
-        <h1>Dados que geram decisões.<br>Inteligência que gera resultados.</h1>
-        <p>Consultoria especializada em Data Science, Machine Learning e Inteligência Artificial. Transformamos seus dados em vantagem competitiva.</p>
-        <a href="#contato" class="cta-btn" data-gtm="cta-contato">Fale Conosco</a>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-mesh" aria-hidden="true">
+      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#25262B" stroke-width="1">
+          <path d="M260 40 L460 260 L260 480 L60 260 Z" stroke="#111216" stroke-width="2"/>
+          <path d="M260 40 L260 480 M60 260 L460 260 M140 140 L380 380 M380 140 L140 380"/>
+        </g>
+        <g>
+          <circle cx="260" cy="40" r="9" fill="#D00018"/><circle cx="460" cy="260" r="7" fill="#111216"/>
+          <circle cx="260" cy="480" r="9" fill="#D00018"/><circle cx="60" cy="260" r="7" fill="#111216"/>
+          <circle cx="140" cy="140" r="6" fill="#111216"/><circle cx="380" cy="140" r="6" fill="#D00018"/>
+          <circle cx="380" cy="380" r="6" fill="#111216"/><circle cx="140" cy="380" r="6" fill="#D00018"/>
+          <circle cx="260" cy="260" r="5" fill="#64676E"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="eyebrow">Ciência · Tecnologia · Estratégia · Resultados</span>
+        <h1>Inteligência aplicada a <span class="accent">dados</span> e a <span class="accent">decisões</span>.</h1>
+        <p class="lead">
+          A Castro Intelligence transforma dados em operação: modelos de machine learning,
+          engenharia de dados e agentes de IA que atendem, qualificam e medem — com rigor
+          técnico e conformidade com a LGPD.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#solucoes">Ver soluções</a>
+          <a class="btn btn-ghost" href="#contato">Conversar sobre um projeto</a>
+        </div>
+        <div class="hero-tags" aria-hidden="true">
+          <span>Machine Learning</span><span>Engenharia de Dados</span><span>Agentes de IA</span>
+          <span>WhatsApp Business</span><span>LGPD</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="servicos" data-gtm-section="servicos">
-      <div class="secao-titulo">
-        <h2>Nossos Serviços</h2>
-        <p>Soluções sob medida para extrair o máximo valor dos seus dados</p>
+  <!-- ================= SOLUÇÕES ================= -->
+  <section class="section" id="solucoes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Soluções</span>
+        <h2>Três frentes, um só objetivo: resultado mensurável.</h2>
+        <p>Da consultoria de dados ao atendimento automatizado, cada entrega é desenhada
+           para gerar decisão, ganho operacional e previsibilidade.</p>
       </div>
-      <div class="servicos-grid">
-        <div class="servico-card" data-gtm-card="ia">
-          <div class="servico-img">
-            <img src="assets/IA-fig.png" alt="Implementação de IA" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>Implementação de IA</h3>
-            <p>Consultoria completa para integrar inteligência artificial nos processos do seu negócio, desde o diagnóstico até a produção.</p>
-          </div>
-        </div>
-        <div class="servico-card" data-gtm-card="data-science">
-          <div class="servico-img">
-            <img src="assets/data-fig.png" alt="Data Science" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>Data Science</h3>
-            <p>Análise exploratória, modelagem estatística e insights acionáveis para tomada de decisão baseada em dados.</p>
-          </div>
-        </div>
-        <div class="servico-card" data-gtm-card="ml">
-          <div class="servico-img">
-            <img src="assets/ML-fig.png" alt="Machine Learning" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>Machine Learning</h3>
-            <p>Desenvolvimento de modelos preditivos customizados: classificação, regressão, clustering e séries temporais.</p>
-          </div>
-        </div>
-        <div class="servico-card" data-gtm-card="mlops">
-          <div class="servico-img">
-            <img src="assets/MLOps-fig.png" alt="MLOps e Deploy" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>MLOps & Deploy</h3>
-            <p>Colocamos seus modelos em produção com pipelines automatizados, monitoramento e escalabilidade.</p>
-          </div>
-        </div>
-        <div class="servico-card" data-gtm-card="dev">
-          <div class="servico-img">
-            <img src="assets/dev-fig.png" alt="Desenvolvimento de Software" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>Desenvolvimento de Software</h3>
-            <p>Aplicações customizadas, APIs, dashboards e ferramentas internas com Python e tecnologias modernas.</p>
-          </div>
-        </div>
-        <div class="servico-card" data-gtm-card="treinamento">
-          <div class="servico-img">
-            <img src="assets/train-fig.png" alt="Treinamento e Capacitação" loading="lazy" />
-          </div>
-          <div class="servico-content">
-            <h3>Treinamento & Capacitação</h3>
-            <p>Workshops e mentorias para capacitar sua equipe em Data Science, Python e ferramentas de IA.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Diferenciais -->
-    <section id="diferenciais" class="diferenciais" data-gtm-section="diferenciais">
-      <div class="diferenciais-content">
-        <div class="secao-titulo">
-          <h2>Por que a Castro Intelligence?</h2>
-          <p>Compromisso com resultados, sem firula</p>
+      <div class="cards">
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 30 L18 18 L28 26 L42 12"/><circle cx="18" cy="18" r="2.5" fill="currentColor"/>
+            <circle cx="28" cy="26" r="2.5" fill="currentColor"/><path d="M6 42 H42"/>
+          </svg>
+          <div class="card-kicker">Consultoria</div>
+          <h3>IA &amp; Engenharia de Dados</h3>
+          <p>Diagnóstico, arquitetura de dados e modelos preditivos sob medida, do
+             experimento à implantação em produção.</p>
+          <ul class="card-list">
+            <li>Pipelines e integração de dados</li>
+            <li>Modelagem preditiva e análise</li>
+            <li>Relatoria mensal de decisão</li>
+            <li>Deploy, monitoramento e iteração</li>
+          </ul>
+          <div class="card-foot"><a class="card-link" href="consultoria.html">Conhecer a consultoria</a></div>
+        </article>
+
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 10 H40 V32 H22 L12 40 V32 H8 Z"/><circle cx="18" cy="21" r="2" fill="currentColor"/>
+            <circle cx="24" cy="21" r="2" fill="currentColor"/><circle cx="30" cy="21" r="2" fill="currentColor"/>
+          </svg>
+          <div class="card-kicker">Produto</div>
+          <h3>Castro Talk</h3>
+          <p>Agente virtual white-label para WhatsApp: atende 24/7, qualifica leads em
+             tempo real e encaminha para a equipe quando faz sentido.</p>
+          <ul class="card-list">
+            <li>Atendimento automatizado 24/7</li>
+            <li>Qualificação dinâmica de leads</li>
+            <li>Alucinação controlada e mensurável</li>
+            <li>Handoff para atendente humano</li>
+          </ul>
+          <div class="card-foot"><a class="card-link" href="castro-talk.html">Conhecer o Castro Talk</a></div>
+        </article>
+
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="7" y="9" width="34" height="26" rx="3"/><path d="M7 17 H41"/><path d="M14 25 l4 4 l8 -8"/>
+          </svg>
+          <div class="card-kicker">Produto</div>
+          <h3>Castro Chat</h3>
+          <p>Caixa de entrada de WhatsApp com auditoria por IA: filas, protocolos e
+             controle total do atendimento humano.</p>
+          <ul class="card-list">
+            <li>Filas: bot, novos, meus, equipe</li>
+            <li>Auditoria de atendimento por IA</li>
+            <li>Protocolo, takeover e nota interna</li>
+            <li>Perfis de acesso e dashboard</li>
+          </ul>
+          <div class="card-foot"><a class="card-link" href="castro-chat.html">Conhecer o Castro Chat</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEMO ================= -->
+  <section class="section section-alt" id="demo">
+    <div class="container">
+      <div class="demo-grid">
+        <div class="demo-copy reveal">
+          <span class="eyebrow">Em ação</span>
+          <h2>O agente atende, qualifica e entrega o caminho certo.</h2>
+          <p>Um exemplo do Castro Talk conduzindo uma conversa real: entende o pedido,
+             coleta o essencial, qualifica o lead e oferece as duas saídas possíveis —
+             o link oficial de marcação ou o encaminhamento para a equipe.</p>
+          <ul class="demo-list">
+            <li>Respostas naturais, ancoradas nas regras do seu negócio</li>
+            <li>Qualificação de lead atualizada durante a conversa</li>
+            <li>Por norma da Castro, o agente nunca executa o agendamento</li>
+            <li>Registro completo, com protocolo, para auditoria no Castro Chat</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-ghost" href="castro-talk.html">Ver como funciona</a>
+          </div>
         </div>
-        <div class="diff-grid">
-          <div class="diff-item">
-            <div class="diff-numero">100%</div>
-            <h4>Foco em Resultado</h4>
-            <p>Projetos orientados a ROI mensurável</p>
-          </div>
-          <div class="diff-item">
-            <div class="diff-numero">E2E</div>
-            <h4>End-to-End</h4>
-            <p>Do problema de negócio à solução em produção</p>
-          </div>
-          <div class="diff-item">
-            <div class="diff-numero">🇧🇷</div>
-            <h4>Atendimento Local</h4>
-            <p>Comunicação direta, sem burocracia</p>
-          </div>
-          <div class="diff-item">
-            <div class="diff-numero">+</div>
-            <h4>Parceria Contínua</h4>
-            <p>Suporte e evolução após a entrega</p>
+        <div class="demo-phone reveal">
+          <div class="phone">
+            <div class="phone-top">
+              <div class="avatar">CT</div>
+              <div>
+                <strong>Castro Talk</strong>
+                <span><span class="status-dot"></span>online agora</span>
+              </div>
+            </div>
+            <div class="phone-body" id="chatBody"></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contato" data-gtm-section="contato">
-      <h2>Vamos Conversar?</h2>
-      <p>Conte sobre seu desafio. Respondemos em até 24 horas úteis.</p>
-      <div class="contato-info">
-        <a href="mailto:contato@castrointelligence.com.br" data-gtm="email-contato">📧 contato@castrointelligence.com.br</a>
-        <a href="https://wa.me/5531982779779" target="_blank" rel="noopener" data-gtm="whatsapp-contato">📱 (31) 98277-9779</a>
+  <!-- ================= CLIENTES ================= -->
+  <section class="section" id="clientes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Clientes &amp; Parceiros</span>
+        <h2>Quem já opera com a Castro Intelligence.</h2>
+        <p>Empresas que colocaram dados e IA para trabalhar no dia a dia — do atendimento
+           automatizado ao controle de qualidade.</p>
       </div>
-    </section>
-  </main>
+      <div class="clients">
+        <article class="client-card reveal">
+          <div class="client-head">
+            <div class="client-logo">V</div>
+            <div><h3>Varizemed</h3><div class="client-tag">Clínica vascular · MG</div></div>
+          </div>
+          <p>Agente de WhatsApp em operação desde 2025, com triagem, qualificação de leads,
+             encaminhamento ao link oficial de marcação e relatoria mensal de desempenho.</p>
+        </article>
+        <article class="client-card reveal">
+          <div class="client-head">
+            <div class="client-logo">H</div>
+            <div><h3>Hub Loc Equipamentos</h3><div class="client-tag">Locação de equipamentos</div></div>
+          </div>
+          <p>Castro Chat em operação: caixa de entrada de WhatsApp com auditoria de
+             atendimento por IA, documentação de LGPD e presença digital.</p>
+        </article>
+      </div>
+      <p class="client-note">Sua empresa pode ser a próxima. <a href="#contato" style="color:var(--ci-red);font-weight:600">Falar com a Castro →</a></p>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Castro Intelligence Data & ML Ltda. Todos os direitos reservados.</p>
-    <p class="footer-cnpj">CNPJ: 63.609.610/0001-07 | Belo Horizonte, MG</p>
-    <p style="margin-top: 16px;"><a href="privacidade.html" style="color: white; text-decoration: underline; font-size: 14px; opacity: 0.8;">Política de Privacidade</a></p>
+  <!-- ================= MÉTODO ================= -->
+  <section class="section section-alt" id="metodo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Método</span>
+        <h2>Um processo direto, do problema ao resultado.</h2>
+        <p>Sem etapas decorativas. Cada fase existe para reduzir incerteza e aproximar
+           a operação do resultado esperado.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-line"></div><h3>Diagnóstico</h3>
+          <p>Entendimento do problema, dos dados disponíveis e das restrições reais do negócio.</p></div>
+        <div class="step reveal"><div class="step-line"></div><h3>Modelagem</h3>
+          <p>Arquitetura de dados, modelos e fluxos desenhados para o contexto específico.</p></div>
+        <div class="step reveal"><div class="step-line"></div><h3>Implantação</h3>
+          <p>Integração aos sistemas em uso, com deploy controlado e documentação.</p></div>
+        <div class="step reveal"><div class="step-line"></div><h3>Medição &amp; Iteração</h3>
+          <p>Métricas acompanhadas de perto e ajustes contínuos com base em evidência.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LGPD ================= -->
+  <section class="section" id="seguranca">
+    <div class="container">
+      <div class="trust">
+        <div class="reveal">
+          <span class="eyebrow">Segurança &amp; LGPD</span>
+          <h2>Conformidade não é acessório — é parte da arquitetura.</h2>
+          <p>A Castro Intelligence atua como operadora de dados e estrutura cada projeto
+             sobre os princípios da Lei nº 13.709/2018, com registro de operações,
+             minimização de dados e transparência para os titulares.</p>
+        </div>
+        <div class="trust-badges reveal">
+          <div class="badge"><span class="dot" aria-hidden="true"></span>
+            <div><strong>Base legal e finalidade</strong>
+            <span>Tratamento com propósito específico, informado e proporcional.</span></div></div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span>
+            <div><strong>Segurança desde a concepção</strong>
+            <span>Medidas técnicas e administrativas aplicadas da concepção à operação.</span></div></div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span>
+            <div><strong>Governança e registro</strong>
+            <span>RoPA, RIPD e contratos de tratamento com cada controlador.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-band" id="contato">
+    <div class="cta-mesh" aria-hidden="true">
+      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#ffffff" stroke-width="1" opacity=".6">
+          <path d="M260 40 L460 260 L260 480 L60 260 Z"/><path d="M260 40 L260 480 M60 260 L460 260"/>
+        </g>
+        <g>
+          <circle cx="260" cy="40" r="8" fill="#ED132B"/><circle cx="460" cy="260" r="6" fill="#ffffff"/>
+          <circle cx="260" cy="480" r="8" fill="#ED132B"/><circle cx="60" cy="260" r="6" fill="#ffffff"/>
+          <circle cx="260" cy="260" r="5" fill="#ED132B"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos transformar seus dados em decisão.</h2>
+      <p>Conte o desafio. Respondemos com um caminho técnico, honesto e mensurável.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="mailto:contato@castrointelligence.com.br" data-gtm="email-contato">Enviar e-mail</a>
+        <a class="btn btn-outline-light" href="https://wa.me/5531982777779" target="_blank" rel="noopener" data-gtm="whatsapp-contato">Falar no WhatsApp</a>
+      </div>
+      <div class="cta-contacts">
+        <div><span class="lbl">E-mail</span><a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a></div>
+        <div><span class="lbl">WhatsApp</span><a href="https://wa.me/5531982777779" target="_blank" rel="noopener">(31) 98277-7779</a></div>
+        <div><span class="lbl">Localização</span><span style="color:rgba(255,255,255,.8)">Belo Horizonte · MG</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/ci-logo.png" alt="Castro Intelligence" />
+          <p>Ciência, Tecnologia, Estratégia e Resultados. Consultoria em IA e engenharia
+             de dados e agentes de atendimento para WhatsApp.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Soluções</h4>
+          <a href="consultoria.html">IA &amp; Engenharia de Dados</a>
+          <a href="castro-talk.html">Castro Talk</a>
+          <a href="castro-chat.html">Castro Chat</a>
+          <a href="#metodo">Método</a>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="#seguranca">Segurança &amp; LGPD</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a>
+          <span>Belo Horizonte · MG</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Castro Intelligence Data &amp; ML Ltda · CNPJ 63.609.610/0001-07</span>
+        <span class="slogan">Ciência, Tecnologia, Estratégia e Resultados.</span>
+      </div>
+    </div>
   </footer>
 
-  <!-- Áudio de fundo -->
-  <audio id="bgAudio" autoplay muted loop preload="metadata">
-    <source src="assets/audio/Quarteto_IZ.mp3" type="audio/mpeg" />
-  </audio>
-
-  <button id="audioToggle" type="button" aria-label="Ativar áudio" title="Ativar áudio" data-gtm="audio-toggle">🔇</button>
+  <!-- ================= ENCORE (portfólio musical) =================
+       Para trocar o destino, edite apenas o href abaixo.
+  ============================================================== -->
+  <section class="encore">
+    <div class="container">
+      <div class="encore-inner">
+        <a class="encore-trigger"
+           href="https://iz-castro.github.io/portfolio-musical/"
+           target="_blank" rel="noopener"
+           data-gtm="portfolio-musical">
+          <span class="dia" aria-hidden="true"></span>
+          Ciência, tecnologia, estratégia, resultados — e música
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <script>
-    (function () {
-      const audio = document.getElementById("bgAudio");
-      const btn = document.getElementById("audioToggle");
-
-      function setIcon() {
-        const audible = !audio.muted && audio.volume > 0 && !audio.paused;
-        btn.textContent = audible ? "🔊" : "🔇";
-        btn.title = audible ? "Silenciar" : "Ativar áudio";
-        btn.setAttribute("aria-label", btn.title);
-      }
-
-      window.addEventListener("load", async () => {
-        try {
-          audio.muted = true;
-          await audio.play();
-        } catch (e) {}
-        setIcon();
-      });
-
-      btn.addEventListener("click", async () => {
-        try {
-          if (audio.paused) {
-            await audio.play();
-            audio.muted = false;
-            audio.volume = 1.0;
-          } else {
-            audio.muted = !audio.muted;
-            if (!audio.muted && audio.volume === 0) audio.volume = 1.0;
-          }
-        } catch (e) {}
-        setIcon();
-      });
-
-      audio.addEventListener("play", setIcon);
-      audio.addEventListener("pause", setIcon);
-      audio.addEventListener("volumechange", setIcon);
-    })();
+    /* Fluxo real da agente: ela NUNCA agenda. Entrega o link ou encaminha para a equipe. */
+    window.CI_CHAT = [
+      {type:'in',  text:'Oi! Queria marcar uma consulta pra varizes.', t:'20:54'},
+      {type:'out', text:'Olá! Sou a assistente virtual da clínica. Posso te ajudar com isso. Como é o seu nome completo?', t:'20:54'},
+      {type:'in',  text:'Maria Fernandes', t:'20:55'},
+      {type:'out', text:'Prazer, Maria. É o seu primeiro atendimento na clínica?', t:'20:55'},
+      {type:'in',  text:'Sim, primeira vez', t:'20:55'},
+      {type:'tag', text:'Qualificação atualizada · novo · primeira consulta'},
+      {type:'out', text:'Perfeito, Maria! Para o agendamento temos duas opções práticas:\n\n1 — Você escolhe o horário e marca agora mesmo pelo link: https://marcaconsultas.com.br/Varizemed\n\n2 — Ou posso pedir para a equipe de atendimento entrar em contato com você por aqui.\n\nQual você prefere?', t:'20:56'},
+      {type:'in',  text:'2', t:'20:56'},
+      {type:'out', text:'Combinado! Já encaminhei para a equipe de atendimento. Em breve alguém fala com você por aqui.', t:'20:57'},
+      {type:'sys', text:'Encaminhado à equipe · protocolo 20260714-1-REC'}
+    ];
   </script>
+  <script src="assets/ci.js"></script>
 </body>
 </html>
