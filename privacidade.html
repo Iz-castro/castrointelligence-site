@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Política de Privacidade — Castro Intelligence</title>
-  <meta name="description" content="Política de Privacidade do aplicativo e serviços da Castro Intelligence." />
-  
+  <title>Política de Privacidade | Castro Intelligence</title>
+  <meta name="description" content="Política de Privacidade da Castro Intelligence Data & ML Ltda — tratamento de dados pessoais conforme a Lei nº 13.709/2018 (LGPD)." />
+  <meta name="theme-color" content="#111216" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="assets/ci-logo.png" />
+  <link rel="canonical" href="https://castrointelligence.com.br/privacidade.html" />
+
+  <!-- Google Tag Manager -->
   <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,197 +18,282 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5CB9PXD5');
   </script>
-  <style>
-    :root {
-      --cor-primaria: #6366f1;
-      --cor-secundaria: #8b5cf6;
-      --cor-texto: #1f2937;
-      --cor-texto-claro: #6b7280;
-      --cor-fundo: #ffffff;
-      --cor-fundo-alt: #f9fafb;
-      --gradiente: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-    }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--cor-fundo-alt);
-      color: var(--cor-texto);
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo { height: 40px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--cor-texto);
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--cor-primaria); }
-
-    /* Container da Política de Privacidade */
-    .politica-container {
-      max-width: 800px;
-      margin: 120px auto 60px;
-      padding: 40px;
-      background: var(--cor-fundo);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-    }
-    .politica-container h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      color: var(--cor-primaria);
-    }
-    .politica-container .data-vigencia {
-      font-size: 14px;
-      color: var(--cor-texto-claro);
-      margin-bottom: 40px;
-      display: block;
-    }
-    .politica-container h2 {
-      font-size: 20px;
-      margin: 32px 0 16px;
-      color: var(--cor-texto);
-    }
-    .politica-container p, .politica-container ul {
-      color: var(--cor-texto-claro);
-      margin-bottom: 16px;
-      font-size: 15px;
-    }
-    .politica-container ul {
-      padding-left: 24px;
-    }
-    .politica-container li {
-      margin-bottom: 8px;
-    }
-    .politica-container strong {
-      color: var(--cor-texto);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--cor-texto);
-      color: white;
-      padding: 40px 24px;
-      text-align: center;
-    }
-    footer p {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-    .footer-cnpj {
-      font-size: 12px;
-      opacity: 0.5;
-      margin-top: 8px;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .politica-container { margin: 100px 20px 40px; padding: 24px; }
-      .politica-container h1 { font-size: 28px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/ci.css" />
 </head>
 
-<body>
+<body id="top">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CB9PXD5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <header>
-    <nav>
-      <a href="index.html">
-        <img class="nav-logo" src="assets/ci-logo.png" alt="Castro Intelligence" />
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Castro Intelligence — início">
+        <img src="assets/ci-logo.png" alt="Castro Intelligence" />
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html#servicos">Serviços</a></li>
-        <li><a href="index.html#diferenciais">Diferenciais</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
-      </ul>
-    </nav>
+      <nav class="nav" id="nav">
+        <a href="index.html#solucoes">Soluções</a>
+        <a href="castro-talk.html">Castro Talk</a>
+        <a href="castro-chat.html">Castro Chat</a>
+        <a href="consultoria.html">Consultoria</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="index.html#contato">Falar com a Castro</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="politica-container">
+  <section class="page-hero">
+    <div class="page-hero-mesh" aria-hidden="true">
+      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#ffffff" stroke-width="1" opacity=".55">
+          <path d="M260 40 L460 260 L260 480 L60 260 Z"/><path d="M260 40 L260 480 M60 260 L460 260"/>
+        </g>
+        <g><circle cx="260" cy="40" r="8" fill="#ED132B"/><circle cx="260" cy="480" r="8" fill="#ED132B"/>
+        <circle cx="260" cy="260" r="5" fill="#ED132B"/></g>
+      </svg>
+    </div>
+    <div class="container">
+      <span class="eyebrow">Documento institucional</span>
       <h1>Política de Privacidade</h1>
-      <span class="data-vigencia">Data de vigência: 06 de abril de 2026</span>
-      
-      <p>A <strong>Castro Intelligence</strong> ("nós", "nosso", "aplicativo") tem o compromisso de proteger a sua privacidade. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e compartilhamos as informações dos usuários ("você", "seu") ao utilizarem o aplicativo Castro Intelligence CRM.</p>
+      <p class="lead">
+        Como a Castro Intelligence trata dados pessoais, com que finalidade, sob qual base
+        legal e como você exerce os seus direitos.
+      </p>
+    </div>
+  </section>
 
-      <h2>1. Informações que Coletamos</h2>
-      <p>Para fornecer nossos serviços de CRM e gerenciamento de atendimento, podemos coletar os seguintes tipos de informações:</p>
+  <main class="container">
+    <article class="legal">
+      <div class="meta">
+        Versão 1.0 · Vigente desde 14 de julho de 2026 · Lei nº 13.709/2018 (LGPD)
+      </div>
+
+      <h2>1. Quem trata os seus dados</h2>
+      <p>
+        Esta política aplica-se ao tratamento de dados pessoais realizado pela
+        <strong>Castro Intelligence Data &amp; ML Ltda.</strong>, inscrita no CNPJ sob o
+        nº 63.609.610/0001-07, com sede na Rua das Videiras, 167, apto. 104, Vila Cloris,
+        Belo Horizonte/MG, CEP 31.744-086.
+      </p>
+      <p>
+        Para os fins desta política, a Castro Intelligence atua como <strong>controladora</strong>
+        dos dados coletados neste site e nos seus canais comerciais, conforme o art. 5º, VI, da LGPD.
+        Contato: <a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a>.
+      </p>
+
+      <h2>2. Escopo</h2>
+      <p>
+        Esta política cobre o site castrointelligence.com.br e o relacionamento comercial da
+        empresa. Ela <strong>não</strong> descreve o tratamento realizado dentro dos projetos
+        contratados por nossos clientes — nesses casos, a Castro Intelligence atua como
+        <strong>operadora</strong>, tratando dados em nome do cliente contratante, que é o
+        controlador. Veja a seção 9.
+      </p>
+
+      <h2>3. Dados que tratamos</h2>
+      <h3>3.1 Dados de navegação</h3>
+      <p>
+        Quando você acessa o site, coletamos automaticamente, por meio do Google Tag Manager e do
+        Google Analytics 4: endereço IP (truncado pelo próprio Google), tipo e versão do navegador,
+        sistema operacional, tipo de dispositivo, páginas visitadas, tempo de permanência,
+        origem do acesso e interações com botões e links.
+      </p>
+      <h3>3.2 Dados de contato</h3>
+      <p>
+        Quando você nos escreve por e-mail ou WhatsApp, tratamos os dados que você fornece:
+        nome, endereço de e-mail, número de telefone, empresa e o conteúdo da própria mensagem.
+      </p>
+      <p>
+        Não coletamos dados pessoais sensíveis (art. 5º, II, da LGPD) neste site e não realizamos
+        tratamento de dados de crianças e adolescentes. Este site não se destina a menores de 18 anos.
+      </p>
+
+      <h2>4. Finalidades e bases legais</h2>
+      <table>
+        <thead>
+          <tr><th>Operação</th><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Medição de audiência do site</td>
+            <td>Entender o uso das páginas e melhorar o conteúdo</td>
+            <td>Consentimento (art. 7º, I) para cookies não essenciais</td>
+          </tr>
+          <tr>
+            <td>Segurança e registro de acesso</td>
+            <td>Prevenir abuso e manter o serviço disponível</td>
+            <td>Legítimo interesse (art. 7º, IX)</td>
+          </tr>
+          <tr>
+            <td>Atendimento a contatos comerciais</td>
+            <td>Responder pedidos, elaborar propostas e negociar</td>
+            <td>Procedimentos preliminares de contrato (art. 7º, V)</td>
+          </tr>
+          <tr>
+            <td>Execução de contrato</td>
+            <td>Prestar os serviços contratados e faturar</td>
+            <td>Execução de contrato (art. 7º, V)</td>
+          </tr>
+          <tr>
+            <td>Guarda de registros fiscais</td>
+            <td>Cumprir obrigações legais e fiscais</td>
+            <td>Obrigação legal (art. 7º, II)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. Cookies</h2>
+      <p>
+        Utilizamos cookies estritamente necessários ao funcionamento do site e cookies de
+        análise, colocados pelo Google Analytics 4 por meio do Google Tag Manager. Os cookies de
+        análise nos dizem quais páginas são vistas e como as pessoas navegam, sempre de forma
+        agregada.
+      </p>
+      <p>
+        Você pode bloquear ou apagar cookies nas configurações do seu navegador. Os cookies de
+        análise não são necessários para navegar, e desativá-los não impede o uso do site.
+      </p>
+
+      <h2>6. Compartilhamento de dados</h2>
+      <p>
+        Não vendemos dados pessoais. Compartilhamos dados apenas com os operadores necessários à
+        prestação do serviço, sempre limitados à finalidade descrita:
+      </p>
       <ul>
-        <li><strong>Informações de Contato e Identificação:</strong> Nomes, números de telefone (especialmente os associados a contas do WhatsApp) e endereços de e-mail dos clientes finais gerados durante o atendimento.</li>
-        <li><strong>Dados de Mensageria e Comunicação:</strong> Conteúdo das mensagens trocadas, histórico de conversas e transcrições de interações, incluindo transições de atendimento entre o nosso agente de Inteligência Artificial e os operadores humanos.</li>
-        <li><strong>Dados Técnicos e de Uso:</strong> Informações sobre como os operadores interagem com a plataforma CRM, logs de acesso e dados de diagnóstico.</li>
+        <li><strong>Google LLC</strong> — Google Tag Manager e Google Analytics 4 (medição de audiência).</li>
+        <li><strong>Meta Platforms, Inc.</strong> — quando você opta por nos contatar via WhatsApp.</li>
+        <li><strong>Zoho Corporation</strong> — serviço de e-mail corporativo.</li>
+        <li><strong>Provedor de hospedagem e CDN</strong> — entrega das páginas e proteção do domínio.</li>
       </ul>
+      <p>
+        Também podemos compartilhar dados para cumprir obrigação legal, regulatória ou ordem de
+        autoridade competente.
+      </p>
 
-      <h2>2. Como Usamos Suas Informações</h2>
-      <p>As informações coletadas são utilizadas exclusivamente para:</p>
+      <h2>7. Transferência internacional</h2>
+      <p>
+        Alguns dos operadores acima processam dados fora do Brasil. Nesses casos, a transferência
+        ocorre com fundamento no art. 33 da LGPD, apoiada nas cláusulas contratuais e nas garantias
+        de proteção oferecidas por esses fornecedores.
+      </p>
+
+      <h2>8. Retenção e eliminação</h2>
+      <p>
+        Dados de navegação são retidos pelo prazo configurado no Google Analytics 4, com o
+        limite máximo de 14 meses. Dados de contato comercial são mantidos enquanto durar a
+        tratativa e por até 24 meses após o último contato. Dados de clientes contratados são
+        mantidos pelos prazos legais e fiscais aplicáveis, contados do encerramento do contrato.
+      </p>
+      <p>
+        Encerrada a finalidade, os dados são eliminados, ressalvadas as hipóteses de conservação
+        do art. 16 da LGPD.
+      </p>
+
+      <h2>9. Nossa atuação como operadora</h2>
+      <p>
+        Nos projetos que prestamos aos clientes — incluindo o Castro Talk e o Castro Chat — a
+        Castro Intelligence trata dados pessoais <strong>em nome do cliente contratante</strong>,
+        que é o controlador e define as finalidades do tratamento. Nessa condição, atuamos segundo
+        as instruções do controlador, com contrato de tratamento de dados firmado, registro das
+        operações e medidas de segurança aplicadas desde a concepção.
+      </p>
+      <p>
+        Se você foi atendido por um agente virtual ou por uma equipe que utiliza nossas
+        ferramentas e deseja exercer direitos sobre esses dados, o pedido deve ser dirigido à
+        empresa que o atendeu. Se preferir, escreva para nós e encaminharemos ao controlador
+        responsável.
+      </p>
+
+      <h2>10. Segurança</h2>
+      <p>
+        Adotamos medidas técnicas e administrativas para proteger os dados contra acesso não
+        autorizado e situações acidentais ou ilícitas de destruição, perda, alteração ou difusão,
+        conforme o art. 46 da LGPD. Entre elas: controle de acesso por perfil, criptografia em
+        trânsito, segregação de ambientes por cliente, registro de operações e política de
+        resposta a incidentes.
+      </p>
+      <p>
+        Nenhum sistema é infalível. Na hipótese de incidente de segurança que possa acarretar
+        risco ou dano relevante, comunicaremos a Autoridade Nacional de Proteção de Dados e os
+        titulares afetados, nos termos do art. 48 da LGPD.
+      </p>
+
+      <h2>11. Seus direitos</h2>
+      <p>
+        A LGPD garante a você, titular dos dados, o direito de obter a qualquer momento,
+        mediante requisição (art. 18):
+      </p>
       <ul>
-        <li>Fornecer, operar e manter o aplicativo Castro Intelligence CRM.</li>
-        <li>Viabilizar o recebimento e o envio de mensagens através da integração com o WhatsApp.</li>
-        <li>Permitir o handoff (transferência de atendimento) fluido e contextualizado entre o agente de IA e os atendentes humanos.</li>
-        <li>Melhorar a precisão e a eficiência do nosso sistema de Inteligência Artificial.</li>
-        <li>Garantir a segurança da plataforma e prevenir fraudes.</li>
+        <li>confirmação da existência de tratamento;</li>
+        <li>acesso aos dados;</li>
+        <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos;</li>
+        <li>portabilidade a outro fornecedor, observados os segredos comercial e industrial;</li>
+        <li>eliminação dos dados tratados com base no consentimento;</li>
+        <li>informação sobre as entidades com as quais compartilhamos dados;</li>
+        <li>informação sobre a possibilidade de não consentir e as consequências da negativa;</li>
+        <li>revogação do consentimento.</li>
       </ul>
+      <p>
+        Para exercer qualquer um deles, escreva para
+        <a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a>.
+        Respondemos em formato simplificado imediatamente ou, por meio de declaração completa,
+        em até 15 dias, conforme o art. 19 da LGPD. O atendimento é gratuito.
+      </p>
 
-      <h2>3. Compartilhamento de Dados e Serviços de Terceiros</h2>
-      <p>Não vendemos ou alugamos seus dados pessoais. O Castro Intelligence CRM compartilha informações apenas com provedores de serviços terceirizados estritamente necessários para a operação do sistema:</p>
-      <ul>
-        <li><strong>Google Cloud / Firestore:</strong> Utilizamos a infraestrutura do Google Cloud e o banco de dados Firestore para hospedagem segura e armazenamento dos dados do CRM em tempo real.</li>
-        <li><strong>Twilio / Meta (WhatsApp):</strong> Utilizamos a API da Twilio como intermediária para integrar nossa plataforma ao WhatsApp Business, processando o envio e recebimento das mensagens dos clientes.</li>
-      </ul>
-      <p>Esses parceiros operam sob suas próprias políticas de privacidade e protocolos rigorosos de segurança de dados.</p>
+      <h2>12. Encarregado pelo tratamento de dados</h2>
+      <p>
+        O canal de comunicação com o encarregado (DPO) da Castro Intelligence é o e-mail
+        <a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a>.
+        Por esse mesmo canal recebemos reclamações, pedidos de esclarecimento e comunicações da
+        ANPD.
+      </p>
 
-      <h2>4. Retenção e Segurança dos Dados</h2>
-      <p>Implementamos medidas de segurança técnicas e organizacionais adequadas para proteger os dados armazenados contra acesso, alteração, divulgação ou destruição não autorizada. Os dados de atendimento e métricas do CRM são retidos apenas pelo tempo necessário para cumprir os propósitos descritos nesta política ou conforme exigido por lei.</p>
-
-      <h2>5. Seus Direitos</h2>
-      <p>Você tem o direito de solicitar:</p>
-      <ul>
-        <li>O acesso aos dados pessoais que armazenamos sobre você ou seus clientes.</li>
-        <li>A correção de dados incompletos ou imprecisos.</li>
-        <li>A exclusão de dados pessoais, sujeito a obrigações legais de retenção.</li>
-      </ul>
-
-      <h2>6. Alterações a Esta Política de Privacidade</h2>
-      <p>Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos os usuários sobre quaisquer alterações publicando a nova Política de Privacidade nesta página e atualizando a "Data de vigência" no topo do documento.</p>
-
-      <h2>7. Contato</h2>
-      <p>Se você tiver dúvidas ou sugestões sobre nossa Política de Privacidade, entre em contato conosco:</p>
-      <ul>
-        <li><strong>E-mail:</strong> contato@castrointelligence.com.br</li>
-        <li><strong>WhatsApp:</strong> (31) 98277-9779</li>
-      </ul>
-    </section>
+      <h2>13. Alterações desta política</h2>
+      <p>
+        Esta política pode ser atualizada para refletir mudanças legais, técnicas ou de negócio.
+        A versão vigente é sempre a publicada nesta página, com a data indicada no início do
+        documento. Alterações relevantes serão sinalizadas de forma destacada.
+      </p>
+    </article>
   </main>
 
-  <footer>
-    <p>© 2025 Castro Intelligence Data & ML Ltda. Todos os direitos reservados.</p>
-    <p class="footer-cnpj">CNPJ: 63.609.610/0001-07 | Belo Horizonte, MG</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/ci-logo.png" alt="Castro Intelligence" />
+          <p>Ciência, Tecnologia, Estratégia e Resultados. Consultoria em IA e engenharia
+             de dados e agentes de atendimento para WhatsApp.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Soluções</h4>
+          <a href="consultoria.html">IA &amp; Engenharia de Dados</a>
+          <a href="castro-talk.html">Castro Talk</a>
+          <a href="castro-chat.html">Castro Chat</a>
+          <a href="index.html#metodo">Método</a>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="index.html#seguranca">Segurança &amp; LGPD</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+          <a href="mailto:contato@castrointelligence.com.br">contato@castrointelligence.com.br</a>
+          <span>Belo Horizonte · MG</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Castro Intelligence Data &amp; ML Ltda · CNPJ 63.609.610/0001-07</span>
+        <span class="slogan">Ciência, Tecnologia, Estratégia e Resultados.</span>
+      </div>
+    </div>
   </footer>
+
+  <script src="assets/ci.js"></script>
 </body>
 </html>
