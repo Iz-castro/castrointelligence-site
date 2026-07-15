@@ -24,6 +24,21 @@
     });
   }
 
+  /* ---------- Header encolhe ao rolar ---------- */
+  (function () {
+    var h = document.querySelector(".site-header");
+    if (!h) return;
+    var ticking = false;
+    function upd() {
+      h.classList.toggle("shrink", window.scrollY > 60);
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { window.requestAnimationFrame(upd); ticking = true; }
+    }, { passive: true });
+    upd();
+  })();
+
   /* ---------- Reveal ao rolar ---------- */
   (function () {
     var els = document.querySelectorAll(".reveal");
