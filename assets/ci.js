@@ -128,4 +128,64 @@
     } else { start(); }
   })();
 
+  /* ---------- Mensuração de conversão ---------- */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("a,button");
+    if (!el) return;
+    var label = el.getAttribute("data-gtm");
+    var evt = el.getAttribute("data-event");
+    if (!label && !evt) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: evt || "cta_click",
+      cta_id: label || undefined,
+      link_url: el.href || undefined,
+      link_text: (el.textContent || "").trim(),
+      page_name: document.documentElement.dataset.pageName || undefined,
+      lead_channel: el.href && el.href.indexOf("wa.me") > -1 ? "whatsapp" : (el.href && el.href.indexOf("mailto:") === 0 ? "email" : "site")
+    });
+  });
+
+  /* ---------- Profundidade de rolagem ---------- */
+  (function () {
+    var sent = {};
+    function check() {
+      var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - window.innerHeight;
+      if (h <= 0) return;
+      var pct = Math.round((window.scrollY / h) * 100);
+      [25, 50, 75, 90].forEach(function (mark) {
+        if (pct >= mark && !sent[mark]) {
+          sent[mark] = true;
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "scroll_depth", percent_scrolled: mark, page_name: document.documentElement.dataset.pageName || undefined });
+        }
+      });
+    }
+    window.addEventListener("scroll", check, { passive: true });
+  })();
+
+  /* ---------- Formulário de diagnóstico ---------- */
+  (function () {
+    var form = document.querySelector("[data-lead-form]");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var d = new FormData(form);
+      var msg = [
+        "Olá, vim pelo site da Castro Intelligence e quero solicitar um diagnóstico de Dados e IA.",
+        "",
+        "Nome: " + d.get("name"),
+        "Empresa: " + d.get("company"),
+        "Cargo: " + (d.get("role") || "não informado"),
+        "Setor: " + d.get("sector"),
+        "Desafio: " + d.get("challenge"),
+        "Contexto: " + d.get("message")
+      ].join("\n");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event:"generate_lead",lead_channel:"whatsapp",lead_form:"diagnostico",lead_sector:d.get("sector"),lead_challenge:d.get("challenge")});
+      window.open("https://wa.me/5531982779779?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    });
+  })();
+
 })();

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /GEO/
+Sitemap: https://castrointelligence.com.br/sitemap.xml
