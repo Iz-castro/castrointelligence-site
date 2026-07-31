@@ -1,0 +1,16 @@
+# Castro Intelligence
+
+> Empresa brasileira de ciência de dados, machine learning, engenharia de dados e inteligência artificial aplicada. Sede em Belo Horizonte, atendimento em todo o Brasil.
+
+## Páginas principais
+- [Consultoria em Dados e IA](https://castrointelligence.com.br/consultoria.html): diagnóstico, pipelines, modelagem preditiva e relatoria.
+- [Castro Talk](https://castrointelligence.com.br/castro-talk.html): agente de IA para atendimento no WhatsApp.
+- [Castro Chat](https://castrointelligence.com.br/castro-chat.html): auditoria de atendimento humano por IA.
+- [Cases](https://castrointelligence.com.br/cases.html): aplicações reais em saúde e locação de equipamentos.
+- [Sobre](https://castrointelligence.com.br/sobre.html): empresa, responsável técnico e princípios.
+- [Perguntas frequentes](https://castrointelligence.com.br/faq.html): respostas sobre dados, IA e LGPD.
+- [Diagnóstico](https://castrointelligence.com.br/diagnostico.html): entrada recomendada de 1 a 2 semanas.
+
+## Contato
+- E-mail: contato@castrointelligence.com.br
+- Localização: Belo Horizonte, Minas Gerais, Brasil
