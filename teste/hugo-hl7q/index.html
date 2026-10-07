@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hugo Hub Loc | Ambiente de teste</title>
+<!-- Página de teste, fora do menu e do sitemap. Não indexar. -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#10327E">
+<link rel="icon" href="/assets/ci-icon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<style>
+  :root {
+    --hl-red: #FF4230;
+    --hl-blue: #10327E;
+    --hl-white: #FFFFFF;
+    --hl-ink: #1B2233;
+    --hl-muted: #5B6478;
+    --hl-line: #DDE2EC;
+    --hl-bg: #F4F6FA;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--hl-bg);
+    color: var(--hl-ink);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: var(--hl-blue);
+    color: var(--hl-white);
+    border-bottom: 4px solid var(--hl-red);
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .top h1 { font-family: 'Montserrat', Arial, sans-serif; font-size: 18px; margin: 0; letter-spacing: .2px; }
+  .top h1 span { color: var(--hl-red); }
+  .tag {
+    font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;
+    background: var(--hl-red); color: var(--hl-white); padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  main { flex: 1; padding: 24px 0 32px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .panel {
+    background: var(--hl-white); border: 1px solid var(--hl-line); border-radius: 12px; padding: 20px;
+  }
+  .panel h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--hl-blue); margin: 0 0 10px; }
+  .panel p { margin: 0 0 12px; }
+  .panel ol { margin: 0 0 14px; padding-left: 20px; }
+  .panel li { margin-bottom: 6px; }
+  .note { font-size: 13px; color: var(--hl-muted); }
+  .ex { font-size: 13px; background: var(--hl-bg); border-left: 3px solid var(--hl-red); padding: 8px 10px; border-radius: 0 6px 6px 0; margin: 0 0 8px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+  button.novo {
+    font: 600 14px 'Inter', Arial, sans-serif; color: var(--hl-white); background: var(--hl-red);
+    border: 0; border-radius: 8px; padding: 10px 16px; cursor: pointer;
+  }
+  button.novo:hover { filter: brightness(.95); }
+  button.novo:focus-visible { outline: 3px solid var(--hl-blue); outline-offset: 2px; }
+  .sessao { font-size: 12px; color: var(--hl-muted); word-break: break-all; }
+  .sessao code { font-size: 12px; color: var(--hl-ink); }
+  .chat {
+    background: var(--hl-white); border: 1px solid var(--hl-line); border-radius: 12px; overflow: hidden;
+    height: min(720px, calc(100vh - 150px)); min-height: 480px;
+  }
+  df-messenger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    --df-messenger-font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    --df-messenger-font-color: #1B2233;
+    --df-messenger-chat-background: #F4F6FA;
+    --df-messenger-titlebar-background: #10327E;
+    --df-messenger-titlebar-font-color: #FFFFFF;
+    --df-messenger-titlebar-subtitle-font-color: #FFFFFF;
+    --df-messenger-message-user-background: #10327E;
+    --df-messenger-message-user-font-color: #FFFFFF;
+    --df-messenger-message-bot-background: #FFFFFF;
+    --df-messenger-send-icon-color: #FF4230;
+    --df-messenger-send-icon-color-hover: #FF4230;
+    --df-messenger-input-box-focus-border: 1px solid #10327E;
+  }
+  footer { font-size: 12px; color: var(--hl-muted); padding: 14px 0 20px; }
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .chat { order: -1; height: 78vh; min-height: 420px; }
+    .top h1 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <h1>Hugo <span>|</span> Hub Loc</h1>
+    <span class="tag">Ambiente de teste</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap grid">
+    <section class="panel" aria-labelledby="como-testar">
+      <h2 id="como-testar">Como testar</h2>
+      <p>O Hugo faz a primeira triagem do atendimento: identifica o equipamento, pergunta cadastro, local da obra, período, quantidade e tensão, e encaminha para a equipe. Ele não passa preço nem fecha contrato.</p>
+      <ol>
+        <li>Escreva como um cliente escreveria no WhatsApp.</li>
+        <li>Responda às perguntas dele até o encaminhamento para a equipe.</li>
+        <li>Para começar outro atendimento do zero, use o botão <strong>Nova conversa</strong>.</li>
+      </ol>
+      <p class="ex">Bom dia, preciso de um martelete pra quebrar contrapiso</p>
+      <p class="ex">Vocês têm andaime? É pra uma obra em Contagem</p>
+      <p class="ex">A betoneira que aluguei parou de funcionar</p>
+      <p class="note">Os asteriscos em volta da pergunta (*assim*) viram negrito no WhatsApp. Aqui na página eles aparecem como texto.</p>
+      <div class="actions">
+        <button type="button" class="novo" id="novaConversa">Nova conversa</button>
+      </div>
+      <p class="sessao" style="margin-top:12px">Sessão de teste: <code id="sessaoId">carregando</code></p>
+    </section>
+
+    <section class="chat" aria-label="Conversa com o Hugo">
+      <df-messenger
+        location="us-central1"
+        project-id="castro-ia"
+        agent-id="d75587e8-ff8b-4f1d-8c53-65d4aa78cadb"
+        language-code="pt-br"
+        max-query-length="-1">
+        <df-messenger-chat
+          chat-title="Hugo"
+          chat-subtitle="Atendente virtual da Hub Loc"
+          placeholder-text="Digite sua mensagem">
+        </df-messenger-chat>
+      </df-messenger>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Página de teste interna mantida pela Castro Intelligence. As conversas ficam registradas para análise do atendimento.</div>
+</footer>
+
+<script>
+  (function () {
+    var CHAVE = 'hugo_teste_user_id';
+
+    function novoId() {
+      return 'web-teste-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+    }
+    function lerId() {
+      try { return sessionStorage.getItem(CHAVE); } catch (e) { return null; }
+    }
+    function gravarId(id) {
+      try { sessionStorage.setItem(CHAVE, id); } catch (e) { /* sem storage: vale só nesta aba */ }
+    }
+
+    var userId = lerId() || novoId();
+    gravarId(userId);
+    document.getElementById('sessaoId').textContent = userId;
+
+    // user_id vai como parâmetro de sessão em toda chamada do CX; a tool hubloc-router lê
+    // $session.params.user_id para guardar o funil entre os turnos.
+    function aplicarId(df) {
+      df.setQueryParameters({ parameters: { user_id: userId } });
+    }
+
+    function messenger() { return document.querySelector('df-messenger'); }
+
+    window.addEventListener('df-messenger-loaded', function () {
+      var df = messenger();
+      if (df) aplicarId(df);
+    });
+
+    document.getElementById('novaConversa').addEventListener('click', function () {
+      var df = messenger();
+      userId = novoId();
+      gravarId(userId);
+      document.getElementById('sessaoId').textContent = userId;
+      if (df) {
+        df.startNewSession();
+        aplicarId(df);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
