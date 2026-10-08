@@ -14,6 +14,59 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script>
+  // Sessão de teste: cada aba ganha um user_id próprio, enviado ao CX como parâmetro de sessão
+  // em toda mensagem. A tool hubloc-router lê $session.params.user_id para guardar o funil;
+  // sem ele, cada visitante cairia na mesma memória.
+  // Este bloco precisa rodar ANTES do df-messenger.js: o evento df-messenger-loaded dispara
+  // antes do fim da página e um listener registrado depois dele nunca é chamado.
+  (function () {
+    var CHAVE = 'hugo_teste_user_id';
+    function novoId() {
+      return 'web-teste-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+    }
+    function lerId() {
+      try { return sessionStorage.getItem(CHAVE); } catch (e) { return null; }
+    }
+    function gravarId(id) {
+      try { sessionStorage.setItem(CHAVE, id); } catch (e) { /* sem storage: vale só nesta aba */ }
+    }
+    var userId = lerId() || novoId();
+    gravarId(userId);
+
+    function messenger() { return document.querySelector('df-messenger'); }
+    function aplicarId() {
+      var df = messenger();
+      if (df && typeof df.setQueryParameters === 'function') {
+        df.setQueryParameters({ parameters: { user_id: userId } });
+        return true;
+      }
+      return false;
+    }
+    function mostrarId() {
+      var el = document.getElementById('sessaoId');
+      if (el) el.textContent = userId;
+    }
+
+    window.addEventListener('df-messenger-loaded', aplicarId);
+    if (window.customElements && customElements.whenDefined) {
+      customElements.whenDefined('df-messenger').then(function () { aplicarId(); });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      mostrarId();
+      aplicarId();
+      document.getElementById('novaConversa').addEventListener('click', function () {
+        userId = novoId();
+        gravarId(userId);
+        mostrarId();
+        var df = messenger();
+        if (df && typeof df.startNewSession === 'function') df.startNewSession();
+        aplicarId();
+      });
+    });
+  })();
+</script>
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 <style>
   :root {
@@ -148,48 +201,5 @@
   <div class="wrap">Página de teste interna mantida pela Castro Intelligence. As conversas ficam registradas para análise do atendimento.</div>
 </footer>
 
-<script>
-  (function () {
-    var CHAVE = 'hugo_teste_user_id';
-
-    function novoId() {
-      return 'web-teste-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
-    }
-    function lerId() {
-      try { return sessionStorage.getItem(CHAVE); } catch (e) { return null; }
-    }
-    function gravarId(id) {
-      try { sessionStorage.setItem(CHAVE, id); } catch (e) { /* sem storage: vale só nesta aba */ }
-    }
-
-    var userId = lerId() || novoId();
-    gravarId(userId);
-    document.getElementById('sessaoId').textContent = userId;
-
-    // user_id vai como parâmetro de sessão em toda chamada do CX; a tool hubloc-router lê
-    // $session.params.user_id para guardar o funil entre os turnos.
-    function aplicarId(df) {
-      df.setQueryParameters({ parameters: { user_id: userId } });
-    }
-
-    function messenger() { return document.querySelector('df-messenger'); }
-
-    window.addEventListener('df-messenger-loaded', function () {
-      var df = messenger();
-      if (df) aplicarId(df);
-    });
-
-    document.getElementById('novaConversa').addEventListener('click', function () {
-      var df = messenger();
-      userId = novoId();
-      gravarId(userId);
-      document.getElementById('sessaoId').textContent = userId;
-      if (df) {
-        df.startNewSession();
-        aplicarId(df);
-      }
-    });
-  })();
-</script>
 </body>
 </html>
